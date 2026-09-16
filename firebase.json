@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "toycarrentingschema.svg", "README.md", "assets/*.png"],
+    "headers": [
+      {
+        "source": "**/*.@(js|css|png|webmanifest)",
+        "headers": [{ "key": "Cache-Control", "value": "public,max-age=3600" }]
+      }
+    ],
+    "rewrites": [{ "source": "**", "destination": "/index.html" }]
+  }
+}
