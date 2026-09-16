@@ -1,7 +1,8 @@
 {
-  "name": "Joyride Toy Car Rentals",
+  "name": "Joyride Oyuncak Araba Kiralama",
   "short_name": "Joyride",
-  "description": "Manage toy car rentals, timers and payments.",
+  "lang": "tr",
+  "description": "Oyuncak araba kiralamalarını, süreleri ve ödemeleri yönetin.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f7f5f0",

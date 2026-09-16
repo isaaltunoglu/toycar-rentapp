@@ -1,161 +1,142 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#f36b21" />
-    <meta name="description" content="Joyride toy car rental manager" />
+    <meta name="description" content="Joyride oyuncak araba kiralama yönetimi" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Joyride Rentals</title>
+    <title>Joyride Kiralama</title>
   </head>
   <body class="auth-pending">
     <section id="authGate" class="auth-gate" aria-labelledby="authTitle">
       <div class="auth-showcase">
-        <a class="brand auth-brand" href="#" aria-label="Joyride home">
+        <a class="brand auth-brand" href="#" aria-label="Joyride ana sayfa">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 32 32"><path d="M6 20h20l-2.2-7.2a3 3 0 0 0-2.9-2.1h-9.8a3 3 0 0 0-2.9 2.1L6 20Z"/><path d="M4 20h24v4H4z"/><circle cx="9" cy="24" r="3"/><circle cx="23" cy="24" r="3"/></svg>
           </span>
           <span>JOY<span>RIDE</span></span>
         </a>
         <div class="auth-showcase-copy">
-          <span class="eyebrow">TOY CAR RENTALS, SIMPLIFIED</span>
-          <h1>More rides.<br />Less waiting.</h1>
-          <p>Run your whole rental fleet from one friendly dashboard—wherever the fun takes you.</p>
+          <h1>Daha çok sürüş.<br />Daha az bekleme.</h1>
+          <p>Oyuncak araba filonuzu, sürüşleri ve ödemeleri tek yerden yönetin.</p>
         </div>
-        <img src="assets/toy-cars-hero.webp" alt="Three ride-on toy cars" />
-        <div class="auth-trust"><span>✓</span><p><strong>Ready for every screen</strong><small>Secure sign-in on desktop and mobile.</small></p></div>
+        <img src="assets/toy-cars-hero.webp" alt="Üç oyuncak akülü araba" />
       </div>
       <div class="auth-panel">
         <div class="auth-card">
           <span class="mobile-auth-brand">JOY<span>RIDE</span></span>
           <div id="firebaseSetupNotice" class="setup-notice" hidden>
-            <strong>Connect Firebase to activate login</strong>
-            <span>Add your web-app configuration to <code>firebase-config.js</code>, then enable Google and Email/Password in Firebase Authentication.</span>
+            <strong>Firebase girişi yapılandırılmamış</strong>
+            <span>Aşağıdaki demoyu kullanın veya hesap girişini açmak için web uygulaması bilgilerinizi <code>firebase-config.js</code> dosyasına ekleyin.</span>
           </div>
           <div class="auth-heading">
-            <span class="modal-kicker">WELCOME TO JOYRIDE</span>
-            <h1 id="authTitle">Sign in to your account</h1>
-            <p id="authSubtitle">Manage your fleet and keep every ride on track.</p>
+            <h1 id="authTitle">Hesabınıza giriş yapın</h1>
+            <p id="authSubtitle">Filonuzu ve tüm sürüşleri kolayca yönetin.</p>
           </div>
           <button type="button" id="googleLogin" class="google-button">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.5-.2-2.2H12v4.3h5.4a4.6 4.6 0 0 1-2 3v2.8h3.3c1.9-1.8 2.9-4.4 2.9-7.9Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.8c-.9.6-2.1 1-3.4 1a5.9 5.9 0 0 1-5.5-4.1H3.1v2.9A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.5 13.7a6 6 0 0 1 0-3.8V7H3.1a10 10 0 0 0 0 9.1l3.4-2.4Z"/><path fill="#EA4335" d="M12 6.1c1.5 0 2.8.5 3.9 1.5l2.9-2.9A9.7 9.7 0 0 0 3.1 7l3.4 2.9A5.9 5.9 0 0 1 12 6.1Z"/></svg>
-            Continue with Google
+            Google ile devam et
           </button>
-          <div class="auth-divider"><span>or continue with email</span></div>
+          <div class="auth-divider"><span>veya e-posta ile devam et</span></div>
           <form id="emailAuthForm" class="auth-form">
             <div id="signupFields" class="signup-fields" hidden>
               <div class="form-grid">
-                <label class="field"><span>First name</span><input id="signupFirstName" maxlength="30" autocomplete="given-name" placeholder="Ahmet" /></label>
-                <label class="field"><span>Surname</span><input id="signupLastName" maxlength="30" autocomplete="family-name" placeholder="Kaya" /></label>
-                <label class="field wide"><span>Company name</span><input id="signupCompany" maxlength="60" autocomplete="organization" placeholder="Joyride Park" /></label>
+                <label class="field"><span>Ad</span><input id="signupFirstName" maxlength="30" autocomplete="given-name" placeholder="Ahmet" /></label>
+                <label class="field"><span>Soyad</span><input id="signupLastName" maxlength="30" autocomplete="family-name" placeholder="Kaya" /></label>
+                <label class="field wide"><span>Şirket adı</span><input id="signupCompany" maxlength="60" autocomplete="organization" placeholder="Joyride Park" /></label>
               </div>
             </div>
-            <label class="field"><span>Email address</span><input id="loginEmail" type="email" required autocomplete="email" placeholder="you@company.com" /></label>
-            <label class="field"><span>Password</span><span class="password-wrap"><input id="loginPassword" type="password" required minlength="6" autocomplete="current-password" placeholder="At least 6 characters" /><button id="togglePassword" type="button" aria-label="Show password">Show</button></span></label>
-            <div class="auth-options"><label><input id="rememberMe" type="checkbox" checked /> Keep me signed in</label><button id="forgotPassword" type="button">Forgot password?</button></div>
+            <label class="field"><span>E-posta adresi</span><input id="loginEmail" type="email" required autocomplete="email" placeholder="siz@sirket.com" /></label>
+            <label class="field"><span>Şifre</span><span class="password-wrap"><input id="loginPassword" type="password" required minlength="6" autocomplete="current-password" placeholder="En az 6 karakter" /><button id="togglePassword" type="button" aria-label="Şifreyi göster">Göster</button></span></label>
+            <div class="auth-options"><label><input id="rememberMe" type="checkbox" checked /> Oturumu açık tut</label><button id="forgotPassword" type="button">Şifremi unuttum</button></div>
             <p id="authError" class="auth-error" role="alert" hidden></p>
-            <button id="emailAuthSubmit" class="primary-button full-button" type="submit">Sign in with email <span>→</span></button>
+            <button id="emailAuthSubmit" class="primary-button full-button" type="submit">E-posta ile giriş yap <span>→</span></button>
           </form>
-          <p class="auth-switch"><span id="authSwitchPrompt">New to Joyride?</span> <button id="authModeSwitch" type="button">Create an account</button></p>
-          <small class="auth-legal">By continuing, you agree to keep your account credentials secure.</small>
+          <p class="auth-switch"><span id="authSwitchPrompt">Joyride'a yeni misiniz?</span> <button id="authModeSwitch" type="button">Hesap oluştur</button></p>
+          <button id="demoLogin" class="demo-login" type="button">Hesapsız demoyu dene <span>→</span></button>
+          <small class="demo-note">Demo değişiklikleri yalnızca bu tarayıcıda saklanır; Firebase'e gönderilmez.</small>
+          <small class="auth-legal">Devam ederek hesap bilgilerinizi güvenle saklamayı kabul edersiniz.</small>
         </div>
       </div>
     </section>
     <div class="app-shell">
       <aside class="sidebar">
-        <a class="brand" href="#" aria-label="Joyride home">
+        <a class="brand" href="#" aria-label="Joyride ana sayfa">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 32 32"><path d="M6 20h20l-2.2-7.2a3 3 0 0 0-2.9-2.1h-9.8a3 3 0 0 0-2.9 2.1L6 20Z"/><path d="M4 20h24v4H4z"/><circle cx="9" cy="24" r="3"/><circle cx="23" cy="24" r="3"/></svg>
           </span>
           <span>JOY<span>RIDE</span></span>
         </a>
 
-        <nav class="desktop-nav" aria-label="Main navigation">
+        <nav class="desktop-nav" aria-label="Ana menü">
           <button class="nav-item active" data-view="dashboard">
-            <span class="nav-icon">⌂</span><span>Overview</span>
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Genel bakış</span>
           </button>
           <button class="nav-item" data-view="fleet">
-            <span class="nav-icon">▱</span><span>My fleet</span><span id="fleetCount" class="nav-count">3</span>
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16h16l-1.7-5a2 2 0 0 0-1.9-1.4H7.6A2 2 0 0 0 5.7 11L4 16Z"/><path d="M5 16v2m14-2v2M8 9.6l1.5-3h5L16 9.6"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg><span>Filom</span><span id="fleetCount" class="nav-count">3</span>
+          </button>
+          <button class="nav-item" data-view="analysis">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V12m5 8V7m5 13v-5m5 5V4"/><path d="M2 20h20"/></svg><span>Analiz</span>
           </button>
           <button class="nav-item" data-view="history">
-            <span class="nav-icon">↻</span><span>Rental history</span>
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2-5.3M4 5v3h3"/><path d="M12 8v4l3 2"/></svg><span>Sürüş geçmişi</span>
+          </button>
+          <button class="nav-item" data-view="settings">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="17" r="2"/></svg><span>Ayarlar</span>
           </button>
           <button class="nav-item" data-open-account>
-            <span class="nav-icon">○</span><span>Renter account</span>
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><span>İşletme profili</span>
           </button>
         </nav>
-
-        <div class="sidebar-tip">
-          <span class="tip-icon">⚡</span>
-          <strong>Quick tip</strong>
-          <p>Resolve finished rides quickly to keep your fleet moving.</p>
-        </div>
         <button class="profile-card" id="profileButton">
           <span class="avatar">AK</span>
           <span><strong id="sidebarAccountName">Ahmet Kaya</strong><small id="sidebarCompany">Joyride Park</small></span>
-          <span>•••</span>
+          <span class="profile-arrow" aria-hidden="true">↗</span>
         </button>
       </aside>
 
       <main class="main-content">
         <header class="topbar">
-          <button class="mobile-logo" aria-label="Home"><span class="brand-mark">J</span></button>
+          <button class="mobile-logo" data-view="dashboard" aria-label="Ana sayfa"><span class="brand-mark">J</span></button>
           <div class="greeting">
-            <p id="greetingText">Good morning, Ahmet</p>
-            <span>Here’s what’s happening with your fleet.</span>
+            <p id="greetingText">Günaydın, Ahmet</p>
+            <span>Filonuzun güncel durumunu görün.</span>
           </div>
           <div class="top-actions">
-            <button class="icon-button" id="notificationButton" aria-label="Notifications">
-              <span class="bell">♢</span><span id="notificationDot" class="notification-dot"></span>
+            <button class="icon-button" id="notificationButton" aria-label="Bildirimler">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span id="notificationDot" class="notification-dot"></span>
             </button>
-            <button class="add-car-button" id="openAddCar"><span>＋</span> Add toy car</button>
+            <button class="add-car-button" id="openAddCar"><span>＋</span> Araba ekle</button>
           </div>
         </header>
+        <p id="demoBanner" class="demo-banner" hidden>Demo modu · Değişiklikleriniz yalnızca bu tarayıcıda saklanır.</p>
 
         <section id="dashboardView" class="view active-view">
-          <section class="hero-card">
-            <div class="hero-copy">
-              <span class="eyebrow">TODAY’S SNAPSHOT</span>
-              <h1>Keep the fun<br />rolling.</h1>
-              <p>Track every ride, collect payments, and get your toy cars ready for the next little driver.</p>
-              <button id="heroViewFleet" class="secondary-button">View your fleet <span>→</span></button>
-            </div>
-            <div class="hero-art">
-              <div class="hero-orbit"></div>
-              <img src="assets/toy-cars-hero.webp" alt="Orange, blue and white ride-on toy cars" />
-            </div>
-          </section>
+          <div class="overview-heading"><div><h1>Genel bakış</h1><p>Sürüşleri ve ödemeleri tek yerden takip edin.</p></div><span id="todayDate"></span></div>
 
-          <section class="stats-grid" aria-label="Fleet status">
+          <section class="stats-grid" aria-label="Filo durumu">
             <article class="stat-card orange">
-              <span class="stat-icon">▱</span>
-              <div><strong id="statTotal">3</strong><span>Total cars</span></div>
-              <small>In your fleet</small>
+              <span>Toplam araba</span><strong id="statTotal">3</strong><small>İşletmenizin filosunda</small>
             </article>
             <article class="stat-card green">
-              <span class="stat-icon">✓</span>
-              <div><strong id="statAvailable">2</strong><span>Available</span></div>
-              <small>Ready to ride</small>
+              <span>Müsait</span><strong id="statAvailable">2</strong><small>Sürüşe hazır</small>
             </article>
             <article class="stat-card blue">
-              <span class="stat-icon">◷</span>
-              <div><strong id="statRented">1</strong><span>On a ride</span></div>
-              <small>Currently active</small>
+              <span>Sürüşte</span><strong id="statRented">1</strong><small>Şu anda aktif</small>
             </article>
             <article class="stat-card gold">
-              <span class="stat-icon">₺</span>
-              <div><strong id="statRevenue">₺0</strong><span>Today’s revenue</span></div>
-              <small>Collected payments</small>
+              <span>Bugün tahsil edilen</span><strong id="statRevenue">₺0</strong><small>Ödenen sürüşler</small>
             </article>
           </section>
 
           <section class="section-block">
             <div class="section-heading">
-              <div><span class="eyebrow">RIGHT NOW</span><h2>Active rentals</h2></div>
+              <div><h2>Aktif sürüşler</h2><p>Ödemeyi kaydetmek için sürüşü bitirin.</p></div>
               <span id="liveBadge" class="live-badge"><i></i> 1 live</span>
             </div>
             <div id="activeRentals" class="active-rentals"></div>
@@ -163,38 +144,75 @@
 
           <section class="section-block fleet-preview">
             <div class="section-heading">
-              <div><span class="eyebrow">YOUR GARAGE</span><h2>Toy car fleet</h2></div>
-              <button class="text-button" data-go-fleet>See all <span>→</span></button>
+              <div><h2>Oyuncak araba filosu</h2><p>Müsait bir arabayla yeni sürüş başlatın.</p></div>
+              <button class="text-button" data-go-fleet>Tümünü gör <span>→</span></button>
             </div>
             <div id="fleetPreview" class="car-grid"></div>
           </section>
         </section>
 
         <section id="fleetView" class="view">
-          <div class="page-title"><div><span class="eyebrow">YOUR GARAGE</span><h1>My fleet</h1><p>Manage cars, prices and rental status.</p></div><button class="add-car-button desktop-add" id="openAddCarFleet">＋ Add toy car</button></div>
+          <div class="page-title"><div><h1>Filom</h1><p>Müsaitliği kontrol edin ve yeni sürüş başlatın.</p></div><button class="add-car-button desktop-add" id="openAddCarFleet">＋ Araba ekle</button></div>
           <div class="toolbar">
-            <label class="search-box"><span>⌕</span><input id="carSearch" type="search" placeholder="Search by car name or color" /></label>
+            <label class="search-box"><span>⌕</span><input id="carSearch" type="search" aria-label="Araba ara" placeholder="Ada veya renge göre ara" /></label>
             <div class="filter-pills" id="filterPills">
-              <button class="active" data-filter="all">All</button><button data-filter="available">Available</button><button data-filter="rented">On a ride</button><button data-filter="occupied">Unpaid</button>
+              <button class="active" data-filter="all">Tümü</button><button data-filter="available">Müsait</button><button data-filter="rented">Sürüşte</button><button data-filter="occupied">Ödenmedi</button>
             </div>
           </div>
           <div id="fleetList" class="car-grid full-grid"></div>
         </section>
 
         <section id="historyView" class="view">
-          <div class="page-title"><div><span class="eyebrow">ACTIVITY</span><h1>Rental history</h1><p>Your recently completed and active rides.</p></div></div>
+          <div class="page-title"><div><h1>Sürüş geçmişi</h1><p>İşletmenizin aktif ve tamamlanan sürüşleri.</p></div></div>
           <div class="history-card">
             <div id="historyList" class="history-list"></div>
           </div>
         </section>
+        <section id="analysisView" class="view">
+          <div class="page-title"><div><h1>Analiz</h1><p>Ödenen sürüşlerin hangi dönemde daha çok kazandırdığını görün.</p></div></div>
+          <section class="analysis-metrics" aria-label="Ödeme toplamları">
+            <article class="analysis-metric"><span>Bugünkü kazanç</span><strong id="analysisToday">₺0</strong><small id="analysisTodayDate"></small></article>
+            <article class="analysis-metric"><span>Bu ayki kazanç</span><strong id="analysisMonth">₺0</strong><small id="analysisMonthDate"></small></article>
+          </section>
+          <div class="analysis-layout">
+            <section class="analysis-chart-card" aria-labelledby="analysisChartTitle">
+              <div class="analysis-card-header"><div><h2 id="analysisChartTitle">Haftanın günlerine göre ödemeler</h2><p id="analysisWeekRange"></p></div><strong id="analysisWeekTotal">Bu hafta ₺0</strong></div>
+              <div id="analysisChart" class="analysis-chart" role="img" aria-label="Pazartesiden pazara tahsil edilen tutarlar"></div>
+              <p class="analysis-footnote">Kazanç, tahsil edilen ödemeleri gösterir. Giderler henüz takip edilmiyor.</p>
+            </section>
+            <aside class="analysis-insight" aria-labelledby="analysisInsightTitle">
+              <h2 id="analysisInsightTitle">Haftalık değerlendirme</h2>
+              <strong id="analysisPeakDay">Henüz ücretli sürüş yok</strong>
+              <p id="analysisInsightText">Bir sürüş ödendiğinde ilgili gün grafikte görünecek.</p>
+              <div class="analysis-insight-rule"></div>
+              <span id="analysisRideCount">Bu hafta 0 ücretli sürüş</span>
+            </aside>
+          </div>
+          <section class="analysis-period" aria-labelledby="analysisMonthsTitle">
+            <div class="analysis-period-heading"><div><h2 id="analysisMonthsTitle">Aylara göre tahsilat</h2><p>Seçilen yıldaki her ayın ödeme toplamı ve ücretli sürüş sayısı.</p></div><label class="analysis-year-picker">Yıl <select id="analysisYearSelect" aria-label="Aylık analiz yılı"></select></label></div>
+            <div class="analysis-period-summary"><strong id="analysisSelectedYearTotal">₺0</strong><span id="analysisSelectedYearRides">0 ücretli sürüş</span></div>
+            <div id="analysisMonthRows" class="analysis-period-rows"></div>
+          </section>
+          <section class="analysis-period" aria-labelledby="analysisYearsTitle">
+            <div class="analysis-period-heading"><div><h2 id="analysisYearsTitle">Yıllara göre tahsilat</h2><p>Kaydedilen yılların toplamını ve sürüş sayısını karşılaştırın.</p></div></div>
+            <div id="analysisYearRows" class="analysis-period-rows"></div>
+          </section>
+        </section>
+        <section id="settingsView" class="view">
+          <div class="page-title"><div><h1>Ayarlar</h1><p>İşletmenizin arabalarını ve ödeme durumlarını yönetin.</p></div></div>
+          <div class="settings-heading"><div><h2>İşletme filosu</h2><p>Araba bilgilerini düzenleyin veya filodan çıkarın.</p></div><button class="add-car-button" id="settingsAddCar">＋ Araba ekle</button></div>
+          <div id="settingsCarList" class="settings-car-list"></div>
+          <button class="secondary-button settings-account-button" id="settingsAccount">İşletme profili</button>
+        </section>
       </main>
 
-      <nav class="mobile-nav" aria-label="Mobile navigation">
-        <button class="active" data-view="dashboard"><span>⌂</span>Home</button>
-        <button data-view="fleet"><span>▱</span>Fleet</button>
-        <button class="mobile-add" id="mobileAdd" aria-label="Add toy car">＋</button>
-        <button data-view="history"><span>↻</span>History</button>
-        <button id="mobileProfile"><span>○</span>Profile</button>
+      <nav class="mobile-nav" aria-label="Mobil menü">
+        <button class="active" data-view="dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Özet</button>
+        <button data-view="fleet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16h16l-2-6H6l-2 6Z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg>Filo</button>
+        <button data-view="analysis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V12m5 8V7m5 13v-5m5 5V4M2 20h20"/></svg>Analiz</button>
+        <button class="mobile-add" id="mobileAdd" aria-label="Araba ekle">＋</button>
+        <button data-view="history"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2-5.3M4 5v3h3"/><path d="M12 8v4l3 2"/></svg>Geçmiş</button>
+        <button data-view="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="17" r="2"/></svg>Ayarlar</button>
       </nav>
     </div>
 
@@ -202,70 +220,81 @@
 
     <dialog id="rentDialog" class="modal">
       <form method="dialog" id="rentForm">
-        <button class="close-button" value="cancel" aria-label="Close">×</button>
-        <span class="modal-kicker">START A RIDE</span>
-        <h2>Rent <span id="rentCarName"></span></h2>
-        <p class="modal-subtitle">Choose how long your little driver wants to ride.</p>
+        <button class="close-button" value="cancel" aria-label="Kapat">×</button>
+        <h2><span id="rentCarName"></span> sürüşü</h2>
+        <p class="modal-subtitle">Sürüş süresini seçin.</p>
         <input type="hidden" id="rentCarId" />
         <fieldset class="duration-options">
-          <legend>Ride time</legend>
-          <label><input type="radio" name="duration" value="5" checked /><span><strong>5 min</strong><small>Quick spin</small></span></label>
-          <label><input type="radio" name="duration" value="10" /><span><strong>10 min</strong><small>Most popular</small></span></label>
-          <label><input type="radio" name="duration" value="custom" /><span><strong>Custom</strong><small>Pick a time</small></span></label>
+          <legend>Sürüş süresi</legend>
+          <label><input type="radio" name="duration" value="5" checked /><span><strong>5 dk</strong><small>Kısa sürüş</small></span></label>
+          <label><input type="radio" name="duration" value="10" /><span><strong>10 dk</strong><small>Popüler</small></span></label>
+          <label><input type="radio" name="duration" value="custom" /><span><strong>Özel</strong><small>Süre seçin</small></span></label>
         </fieldset>
-        <label id="customTimeWrap" class="field hidden"><span>Minutes</span><input id="customMinutes" type="number" min="1" max="180" value="15" /></label>
-        <div class="price-summary"><span>Total cost</span><strong id="rentPrice">₺100</strong></div>
-        <button class="primary-button full-button" value="default" type="submit">Start rental <span>→</span></button>
+        <label id="customTimeWrap" class="field hidden"><span>Dakika</span><input id="customMinutes" type="number" min="1" max="180" value="15" /></label>
+        <div class="price-summary"><span>Toplam tutar</span><strong id="rentPrice">₺100</strong></div>
+        <button class="primary-button full-button" value="default" type="submit">Sürüşü başlat <span>→</span></button>
       </form>
     </dialog>
 
     <dialog id="resolveDialog" class="modal resolve-modal">
       <form method="dialog" id="resolveForm">
-        <button class="close-button" value="cancel" aria-label="Close">×</button>
-        <span class="modal-kicker">RIDE FINISHED</span>
+        <button class="close-button" value="cancel" aria-label="Kapat">×</button>
         <div class="finish-icon">✓</div>
-        <h2>Was the ride paid?</h2>
-        <p class="modal-subtitle"><span id="resolveCarName"></span> has finished its rental. Confirm payment to make it available again.</p>
+        <h2>Ödeme yapıldı mı?</h2>
+        <p class="modal-subtitle"><span id="resolveCarName"></span> sürüşü bitti. Arabayı yeniden müsait yapmak için ödeme durumunu onaylayın.</p>
         <input type="hidden" id="resolveCarId" />
-        <button class="primary-button full-button" type="button" id="markPaid">Yes, payment received</button>
-        <button class="danger-button full-button" type="button" id="markUnpaid">No, mark as unpaid</button>
+        <label class="payment-control" for="resolvePayment"><span>Ödeme durumu</span><span class="payment-switch"><input type="checkbox" id="resolvePayment" /><span class="payment-track"></span></span><strong id="resolvePaymentLabel">Ödenmedi</strong></label>
+        <button class="primary-button full-button" type="button" id="confirmPayment">Ödeme durumunu onayla</button>
+      </form>
+    </dialog>
+
+    <dialog id="editCarDialog" class="modal">
+      <form id="editCarForm">
+        <button class="close-button" type="button" data-close-dialog aria-label="Kapat">×</button>
+        <h2>Arabayı düzenle</h2>
+        <p class="modal-subtitle">Değişiklikler işletmenizin filosuna kaydedilir.</p>
+        <input type="hidden" id="editCarId" />
+        <label class="field"><span>Araba adı</span><input id="editCarName" required maxlength="30" /></label>
+        <div class="form-grid">
+          <label class="field"><span>Renk</span><select id="editCarColor"><option value="Orange">Turuncu</option><option value="Blue">Mavi</option><option value="White">Beyaz</option><option value="Pink">Pembe</option><option value="Green">Yeşil</option><option value="Red">Kırmızı</option></select></label>
+          <label class="field"><span>5 dakikalık ücret (₺)</span><input id="editCarPrice" required type="number" min="1" step="1" /></label>
+        </div>
+        <button class="primary-button full-button" type="submit">Arabayı kaydet</button>
       </form>
     </dialog>
 
     <dialog id="addCarDialog" class="modal">
       <form method="dialog" id="addCarForm">
-        <button class="close-button" value="cancel" aria-label="Close">×</button>
-        <span class="modal-kicker">GROW YOUR FLEET</span>
-        <h2>Add a toy car</h2>
-        <p class="modal-subtitle">Set the basics now. You can start renting it right away.</p>
+        <button class="close-button" value="cancel" aria-label="Kapat">×</button>
+        <h2>Araba ekle</h2>
+        <p class="modal-subtitle">Bilgileri girin; araba hemen kiralanabilir.</p>
         <div class="form-grid">
-          <label class="field wide"><span>Car name</span><input id="newCarName" required maxlength="30" placeholder="e.g. Sunset Racer" /></label>
-          <label class="field"><span>Color</span><select id="newCarColor"><option>Orange</option><option>Blue</option><option>White</option><option>Pink</option><option>Green</option><option>Red</option></select></label>
-          <label class="field"><span>5-minute price (₺)</span><input id="newCarPrice" required type="number" min="1" value="100" /></label>
+          <label class="field wide"><span>Araba adı</span><input id="newCarName" required maxlength="30" placeholder="Örn. Günbatımı Yarışçısı" /></label>
+          <label class="field"><span>Renk</span><select id="newCarColor"><option value="Orange">Turuncu</option><option value="Blue">Mavi</option><option value="White">Beyaz</option><option value="Pink">Pembe</option><option value="Green">Yeşil</option><option value="Red">Kırmızı</option></select></label>
+          <label class="field"><span>5 dakikalık ücret (₺)</span><input id="newCarPrice" required type="number" min="1" value="100" /></label>
         </div>
-        <button class="primary-button full-button" value="default" type="submit">Add to fleet <span>→</span></button>
+        <button class="primary-button full-button" value="default" type="submit">Filoya ekle <span>→</span></button>
       </form>
     </dialog>
 
     <dialog id="accountDialog" class="modal account-modal">
       <form method="dialog" id="accountForm">
-        <button class="close-button" value="cancel" aria-label="Close">×</button>
-        <span class="modal-kicker">RENTER ACCOUNT</span>
-        <h2>Your business profile</h2>
-        <p class="modal-subtitle">These details identify the person and company managing the toy-car fleet.</p>
+        <button class="close-button" value="cancel" aria-label="Kapat">×</button>
+        <h2>İşletme profiliniz</h2>
+        <p class="modal-subtitle">Bu bilgiler filoyu yöneten kişiyi ve işletmeyi tanımlar.</p>
         <div class="account-identity">
           <span class="account-avatar" id="accountAvatar">AK</span>
           <div><strong id="accountPreviewName">Ahmet Kaya</strong><small id="accountPreviewCompany">Joyride Park</small></div>
         </div>
         <div class="form-grid">
-          <label class="field"><span>First name</span><input id="accountFirstName" required maxlength="30" autocomplete="given-name" /></label>
-          <label class="field"><span>Surname</span><input id="accountLastName" required maxlength="30" autocomplete="family-name" /></label>
-          <label class="field wide"><span>Company name</span><input id="accountCompany" required maxlength="60" autocomplete="organization" /></label>
-          <label class="field"><span>Phone number</span><input id="accountPhone" type="tel" maxlength="24" autocomplete="tel" /></label>
-          <label class="field"><span>Email address</span><input id="accountEmail" type="email" maxlength="80" autocomplete="email" /></label>
+          <label class="field"><span>Ad</span><input id="accountFirstName" required maxlength="30" autocomplete="given-name" /></label>
+          <label class="field"><span>Soyad</span><input id="accountLastName" required maxlength="30" autocomplete="family-name" /></label>
+          <label class="field wide"><span>Şirket adı</span><input id="accountCompany" required maxlength="60" autocomplete="organization" /></label>
+          <label class="field"><span>Telefon numarası</span><input id="accountPhone" type="tel" maxlength="24" autocomplete="tel" /></label>
+          <label class="field"><span>E-posta adresi</span><input id="accountEmail" type="email" maxlength="80" autocomplete="email" /></label>
         </div>
-        <button class="primary-button full-button" value="default" type="submit">Save account</button>
-        <button class="signout-button full-button" type="button" id="signOutButton">Sign out</button>
+        <button class="primary-button full-button" value="default" type="submit">Hesabı kaydet</button>
+        <button class="signout-button full-button" type="button" id="signOutButton">Çıkış yap</button>
       </form>
     </dialog>
     <script src="app.js"></script>
